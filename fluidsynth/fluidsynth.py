@@ -18,4 +18,4 @@ void delete_fluid_audio_driver(fluid_audio_driver_t* driver);
 int delete_fluid_synth(fluid_synth_t* synth);
 void delete_fluid_settings(fluid_settings_t* settings);
 """)
-C = ffi.dlopen("/usr/lib/x86_64-linux-gnu/libfluidsynth.so.1")  # Testing
+C = ffi.dlopen("libfluidsynth.so.1")
