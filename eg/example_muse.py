@@ -1,3 +1,5 @@
+# Muse, from https://github.com/paultag/python-muse
+
 from muse.scales.minor import NaturalMinorScale
 from muse.chords import chord, MINOR_7TH
 from muse.tone import Tone
