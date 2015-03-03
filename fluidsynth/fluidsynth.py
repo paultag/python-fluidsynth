@@ -1,5 +1,5 @@
-import time
 from cffi import FFI
+
 ffi = FFI()
 ffi.cdef("""
 typedef struct _fluid_hashtable_t fluid_settings_t;
@@ -19,20 +19,3 @@ int delete_fluid_synth(fluid_synth_t* synth);
 void delete_fluid_settings(fluid_settings_t* settings);
 """)
 C = ffi.dlopen("/usr/lib/x86_64-linux-gnu/libfluidsynth.so.1")  # Testing
-
-settings = C.new_fluid_settings()
-synth = C.new_fluid_synth(settings)
-adriver = C.new_fluid_audio_driver(settings, synth)
-sfont_id = C.fluid_synth_sfload(synth, b"./organ.sf2", 1)
-
-key = 69  # ISO16 A4
-
-C.fluid_synth_noteon(synth, 0, key, 80);
-
-time.sleep(1000);
-
-C.fluid_synth_noteoff(synth, 0, key);
-
-C.delete_fluid_audio_driver(adriver);
-C.delete_fluid_synth(synth);
-C.delete_fluid_settings(settings);
