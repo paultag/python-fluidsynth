@@ -34,3 +34,9 @@ class AsyncSynth(Synth):
         yield from asyncio.sleep(duration)
         for key in keys:
             self.noteoff(channel, key)
+
+    @asyncio.coroutine
+    def note(self, channel, key, velocity, duration):
+        self.noteon(channel, key, velocity)
+        yield from asyncio.sleep(duration)
+        self.noteoff(channel, key)
