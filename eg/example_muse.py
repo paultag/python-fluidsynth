@@ -7,7 +7,9 @@ from muse.tone import Tone
 from fluidsynth import Synth
 import time
 
-synth = Synth("/home/tag/organ.sf2")
+synth = Synth("/home/tag/organ.sf2", config={
+    "audio.driver": "pulseaudio"
+})
 synth.start()
 
 

@@ -23,8 +23,12 @@ from .fluidsynth import C
 
 
 class Synth(object):
-    def __init__(self, font):
+    def __init__(self, font, *, config):
         self.settings = C.new_fluid_settings()
+
+        for key, value in config.items():
+            C.fluid_settings_setstr(self.settings, key.encode(), value.encode())
+
         self.synth = C.new_fluid_synth(self.settings)
         self.sfont_id = C.fluid_synth_sfload(self.synth, font.encode(), 1)
         self.adriver = None

@@ -4,7 +4,7 @@ from setuptools import setup
 long_description = ""
 
 setup(
-    name="muse",
+    name="fluidsynth",
     version="0.1",
     packages=[
         'fluidsynth',

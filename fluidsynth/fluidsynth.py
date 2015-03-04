@@ -30,6 +30,7 @@ fluid_settings_t* new_fluid_settings(void);
 fluid_synth_t* new_fluid_synth(fluid_settings_t* settings);
 fluid_audio_driver_t* new_fluid_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth);
 int fluid_synth_sfload(fluid_synth_t* synth, const char* filename, int reset_presets);
+int fluid_settings_setstr(fluid_settings_t* settings, const char *name, const char *str);
 
 int fluid_synth_noteon(fluid_synth_t* synth, int chan, int key, int vel);
 int fluid_synth_noteoff(fluid_synth_t* synth, int chan, int key);
