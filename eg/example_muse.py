@@ -2,7 +2,6 @@
 
 from muse.scales.minor import NaturalMinorScale
 from muse.chords import (
-    chord,
     MAJOR, MINOR, AUGMENTED, DIMINISHED,
     DIMINISHED_SEVENTH, HALF_DIMINISHED_SEVENTH,
     DOMINANT_SEVENTH, MAJOR_SEVENTH, AUGMENTED_SEVENTH,
@@ -41,7 +40,7 @@ while True:
         AUGMENTED_MAJOR_SEVENTH
     ]:
         for note in take(NaturalMinorScale(Tone(0)).acending(), 7):
-            play_chord(chord(note, prog), 0.25)
+            play_chord(note.chord(prog), 0.25)
 
 
 synth.shutdown()

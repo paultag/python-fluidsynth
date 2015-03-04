@@ -1,4 +1,4 @@
-from muse.chords import (chord, MAJOR, MAJOR_SEVENTH,)
+from muse.chords import (MAJOR, MAJOR_SEVENTH,)
 from muse.tone import Tone
 
 from fluidsynth.aio import AsyncSynth
@@ -23,7 +23,7 @@ F2 = D3.relative_tone(300).relative_tone(-1200)
 @asyncio.coroutine
 def play_chord(note, chord_, duration, lag):
     yield from asyncio.sleep(lag)
-    yield from synth.chord(0, [x.to_midi() for x in chord(note, chord_)], 80, duration)
+    yield from synth.chord(0, [x.to_midi() for x in note.chord(chord_)], 80, duration)
 
 
 @asyncio.coroutine
