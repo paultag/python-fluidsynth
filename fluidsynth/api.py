@@ -43,6 +43,6 @@ class Synth(object):
         C.fluid_synth_noteoff(self.synth, channel, key);
 
     def shutdown(self):
-        C.delete_fluid_audio_driver(adriver);
-        C.delete_fluid_synth(synth);
-        C.delete_fluid_settings(settings);
+        C.delete_fluid_audio_driver(self.adriver);
+        C.delete_fluid_synth(self.synth);
+        C.delete_fluid_settings(self.settings);
