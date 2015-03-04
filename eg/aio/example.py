@@ -12,12 +12,12 @@ synth = AsyncSynth("/home/tag/piano/Full Grand Piano.sf2", config={
 synth.start()
 
 
-time.sleep(3)
+time.sleep(1)
 
 
-A3 = Tone(-1200)
-D3 = A3.relative_tone(500)
-F2 = D3.relative_tone(300).relative_tone(-1200)
+A3 = Tone.from_string("A3")
+D3 = Tone.from_string("D3")
+F2 = Tone.from_string("F2")
 
 
 @asyncio.coroutine
@@ -40,6 +40,6 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 loop.close()
 
-time.sleep(4)
+time.sleep(2)
 
 synth.shutdown()
