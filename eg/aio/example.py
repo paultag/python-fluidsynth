@@ -12,6 +12,8 @@ synth = AsyncSynth("/home/tag/piano/Full Grand Piano.sf2", config={
 synth.start()
 
 
+time.sleep(3)
+
 
 A3 = Tone(-1200)
 D3 = A3.relative_tone(500)
